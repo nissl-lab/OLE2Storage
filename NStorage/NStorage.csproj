@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A35E2AE0-2933-440F-89B7-E98EC503D361}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NStorage</RootNamespace>
+    <AssemblyName>NStorage</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncryptedDocumentException.cs" />
+    <Compile Include="OldExcelFormatException.cs" />
+    <Compile Include="OldFileFormatException.cs" />
+    <Compile Include="POIFS\Common\POIFSBigBlockSize.cs" />
+    <Compile Include="POIFS\Common\POIFSConstants.cs" />
+    <Compile Include="POIFS\Dev\POIFSLister.cs" />
+    <Compile Include="POIFS\Dev\POIFSViewable.cs" />
+    <Compile Include="POIFS\Dev\POIFSViewEngine.cs" />
+    <Compile Include="POIFS\Dev\POIFSViewer.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSReader.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSReaderEvent.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSReaderEventArgs.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSReaderListener.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSReaderRegistry.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSWriterEvent.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSWriterEventArgs.cs" />
+    <Compile Include="POIFS\EventFileSystem\POIFSWriterListener.cs" />
+    <Compile Include="POIFS\FileSystem\BATManaged.cs" />
+    <Compile Include="POIFS\FileSystem\BlockStore.cs" />
+    <Compile Include="POIFS\FileSystem\CloseIgnoringInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\DirectoryEntry.cs" />
+    <Compile Include="POIFS\FileSystem\DirectoryNode.cs" />
+    <Compile Include="POIFS\FileSystem\DocumentDescriptor.cs" />
+    <Compile Include="POIFS\FileSystem\DocumentEntry.cs" />
+    <Compile Include="POIFS\FileSystem\DocumentInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\DocumentNode.cs" />
+    <Compile Include="POIFS\FileSystem\DocumentOutputStream.cs" />
+    <Compile Include="POIFS\FileSystem\Entry.cs" />
+    <Compile Include="POIFS\FileSystem\EntryNode.cs" />
+    <Compile Include="POIFS\FileSystem\EntryUtils.cs" />
+    <Compile Include="POIFS\FileSystem\FilteringDirectoryNode.cs" />
+    <Compile Include="POIFS\FileSystem\NDocumentInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\NDocumentOutputStream.cs" />
+    <Compile Include="POIFS\FileSystem\NotOLE2FileException.cs" />
+    <Compile Include="POIFS\FileSystem\NPOIFSDocument.cs" />
+    <Compile Include="POIFS\FileSystem\NPOIFSFileSystem.cs" />
+    <Compile Include="POIFS\FileSystem\NPOIFSMiniStore.cs" />
+    <Compile Include="POIFS\FileSystem\NPOIFSStream.cs" />
+    <Compile Include="POIFS\FileSystem\ODocumentInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\OfficeXmlFileException.cs" />
+    <Compile Include="POIFS\FileSystem\Ole10Native.cs" />
+    <Compile Include="POIFS\FileSystem\Ole10NativeException.cs" />
+    <Compile Include="POIFS\FileSystem\POIFSDocument.cs" />
+    <Compile Include="POIFS\FileSystem\POIFSDocumentPath.cs" />
+    <Compile Include="POIFS\FileSystem\POIFSDocumentReader.cs" />
+    <Compile Include="POIFS\FileSystem\POIFSDocumentWriter.cs" />
+    <Compile Include="POIFS\FileSystem\POIFSFileSystem.cs" />
+    <Compile Include="POIFS\NIO\ByteArrayBackedDataSource.cs" />
+    <Compile Include="POIFS\NIO\DataSource.cs" />
+    <Compile Include="POIFS\NIO\FileBackedDataSource.cs" />
+    <Compile Include="POIFS\Property\Child.cs" />
+    <Compile Include="POIFS\Property\DirectoryProperty.cs" />
+    <Compile Include="POIFS\Property\DocumentProperty.cs" />
+    <Compile Include="POIFS\Property\NPropertyTable.cs" />
+    <Compile Include="POIFS\Property\Parent.cs" />
+    <Compile Include="POIFS\Property\Property.cs" />
+    <Compile Include="POIFS\Property\PropertyConstants.cs" />
+    <Compile Include="POIFS\Property\PropertyFactory.cs" />
+    <Compile Include="POIFS\Property\PropertyTable.cs" />
+    <Compile Include="POIFS\Property\PropertyTableBase.cs" />
+    <Compile Include="POIFS\Property\RootProperty.cs" />
+    <Compile Include="POIFS\Storage\BATBlock.cs" />
+    <Compile Include="POIFS\Storage\BigBlock.cs" />
+    <Compile Include="POIFS\Storage\BlockAllocationTableReader.cs" />
+    <Compile Include="POIFS\Storage\BlockAllocationTableWriter.cs" />
+    <Compile Include="POIFS\Storage\BlockList.cs" />
+    <Compile Include="POIFS\Storage\BlockListImpl.cs" />
+    <Compile Include="POIFS\Storage\BlockWritable.cs" />
+    <Compile Include="POIFS\Storage\DataInputBlock.cs" />
+    <Compile Include="POIFS\Storage\DocumentBlock.cs" />
+    <Compile Include="POIFS\Storage\HeaderBlock.cs" />
+    <Compile Include="POIFS\Storage\HeaderBlockConstants.cs" />
+    <Compile Include="POIFS\Storage\HeaderBlockReader.cs" />
+    <Compile Include="POIFS\Storage\HeaderBlockWriter.cs" />
+    <Compile Include="POIFS\Storage\ListManagedBlock.cs" />
+    <Compile Include="POIFS\Storage\PropertyBlock.cs" />
+    <Compile Include="POIFS\Storage\RawDataBlock.cs" />
+    <Compile Include="POIFS\Storage\RawDataBlockList.cs" />
+    <Compile Include="POIFS\Storage\SmallBlockTableReader.cs" />
+    <Compile Include="POIFS\Storage\SmallBlockTableWriter.cs" />
+    <Compile Include="POIFS\Storage\SmallDocumentBlock.cs" />
+    <Compile Include="POIFS\Storage\SmallDocumentBlockList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnsupportedFileFormatException.cs" />
+    <Compile Include="Utility\Arrays.cs" />
+    <Compile Include="Utility\AssertFailedException.cs" />
+    <Compile Include="Utility\BigInteger.cs" />
+    <Compile Include="Utility\BitField.cs" />
+    <Compile Include="Utility\BitFieldFactory.cs" />
+    <Compile Include="Utility\BlockingInputStream.cs" />
+    <Compile Include="Utility\ByteArrayInputStream.cs" />
+    <Compile Include="Utility\ByteBuffer.cs" />
+    <Compile Include="Utility\ByteField.cs" />
+    <Compile Include="Utility\Character.cs" />
+    <Compile Include="Utility\ClassID.cs" />
+    <Compile Include="Utility\CloseIgnoringInputStream.cs" />
+    <Compile Include="Utility\CodePageUtil.cs" />
+    <Compile Include="Utility\Collections\EmptyEnumerable.cs" />
+    <Compile Include="Utility\Collections\HashSet.cs" />
+    <Compile Include="Utility\Collections\Properties.cs" />
+    <Compile Include="Utility\Collections\StringTokenizer.cs" />
+    <Compile Include="Utility\CRC32.cs" />
+    <Compile Include="Utility\DelayableLittleEndianOutput.cs" />
+    <Compile Include="Utility\FixedField.cs" />
+    <Compile Include="Utility\HexDump.cs" />
+    <Compile Include="Utility\HexRead.cs" />
+    <Compile Include="Utility\IntegerField.cs" />
+    <Compile Include="Utility\IntList.cs" />
+    <Compile Include="Utility\IntMapper.cs" />
+    <Compile Include="Utility\IOUtils.cs" />
+    <Compile Include="Utility\LittleEndian.cs" />
+    <Compile Include="Utility\LittleEndianByteArrayInputStream.cs" />
+    <Compile Include="Utility\LittleEndianByteArrayOutputStream.cs" />
+    <Compile Include="Utility\LittleEndianConsts.cs" />
+    <Compile Include="Utility\LittleEndianInput.cs" />
+    <Compile Include="Utility\LittleEndianInputStream.cs" />
+    <Compile Include="Utility\LittleEndianOutput.cs" />
+    <Compile Include="Utility\LittleEndianOutputStream.cs" />
+    <Compile Include="Utility\LongField.cs" />
+    <Compile Include="Utility\LZWDecompresser.cs" />
+    <Compile Include="Utility\NullLogger.cs" />
+    <Compile Include="Utility\Number.cs" />
+    <Compile Include="Utility\Operator.cs" />
+    <Compile Include="Utility\PngUtils.cs" />
+    <Compile Include="Utility\POILogFactory.cs" />
+    <Compile Include="Utility\POILogger.cs" />
+    <Compile Include="Utility\PushbackStream.cs" />
+    <Compile Include="Utility\RecordFormatException.cs" />
+    <Compile Include="Utility\RuntimeException.cs" />
+    <Compile Include="Utility\ShortField.cs" />
+    <Compile Include="Utility\ShortList.cs" />
+    <Compile Include="Utility\StringUtil.cs" />
+    <Compile Include="Utility\SystemOutLogger.cs" />
+    <Compile Include="Utility\TempFile.cs" />
+    <Compile Include="Utility\ULongField.cs" />
+    <Compile Include="Utility\Units.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

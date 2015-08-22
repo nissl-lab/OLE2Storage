@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{48090785-24DA-4CD9-A47D-F461CF7589C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NStorage.Test</RootNamespace>
+    <AssemblyName>NStorage.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="POIDataSamples.cs" />
+    <Compile Include="POIFS\EventFileSystem\Listener.cs" />
+    <Compile Include="POIFS\EventFileSystem\TestPOIFSReaderRegistry.cs" />
+    <Compile Include="POIFS\FileSystem\ReaderWriter.cs" />
+    <Compile Include="POIFS\FileSystem\SlowInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\TestDirectoryNode.cs" />
+    <Compile Include="POIFS\FileSystem\TestDocument.cs" />
+    <Compile Include="POIFS\FileSystem\TestDocumentDescriptor.cs" />
+    <Compile Include="POIFS\FileSystem\TestDocumentInputStream.cs" />
+    <Compile Include="POIFS\FileSystem\TestDocumentNode.cs" />
+    <Compile Include="POIFS\FileSystem\TestDocumentOutputStream.cs" />
+    <Compile Include="POIFS\FileSystem\TestEmptyDocument.cs" />
+    <Compile Include="POIFS\FileSystem\TestEntryUtils.cs" />
+    <Compile Include="POIFS\FileSystem\TestFileSystemBugs.cs" />
+    <Compile Include="POIFS\FileSystem\TestFilteringDirectoryNode.cs" />
+    <Compile Include="POIFS\FileSystem\TestNPOIFSFileSystem.cs" />
+    <Compile Include="POIFS\FileSystem\TestNPOIFSMiniStore.cs" />
+    <Compile Include="POIFS\FileSystem\TestNPOIFSStream.cs" />
+    <Compile Include="POIFS\FileSystem\TestOle10Native.cs" />
+    <Compile Include="POIFS\FileSystem\TestPOIFSDocumentPath.cs" />
+    <Compile Include="POIFS\FileSystem\TestPOIFSFileSystem.cs" />
+    <Compile Include="POIFS\FileSystem\TestPropertySorter.cs" />
+    <Compile Include="POIFS\NIO\TestDataSource.cs" />
+    <Compile Include="POIFS\Properties\LocalProperty.cs" />
+    <Compile Include="POIFS\Properties\TestDirectoryProperty.cs" />
+    <Compile Include="POIFS\Properties\TestDocumentProperty.cs" />
+    <Compile Include="POIFS\Properties\TestPropertyFactory.cs" />
+    <Compile Include="POIFS\Properties\TestPropertyTable.cs" />
+    <Compile Include="POIFS\Properties\TestRootProperty.cs" />
+    <Compile Include="POIFS\Storage\LocalProperty.cs" />
+    <Compile Include="POIFS\Storage\LocalRawDataBlockList.cs" />
+    <Compile Include="POIFS\Storage\RawDataUtil.cs" />
+    <Compile Include="POIFS\Storage\TestBATBlock.cs" />
+    <Compile Include="POIFS\Storage\TestBlockAllocationTableReader.cs" />
+    <Compile Include="POIFS\Storage\TestBlockAllocationTableWriter.cs" />
+    <Compile Include="POIFS\Storage\TestBlockListImpl.cs" />
+    <Compile Include="POIFS\Storage\TestDocumentBlock.cs" />
+    <Compile Include="POIFS\Storage\TestHeaderBlockReading.cs" />
+    <Compile Include="POIFS\Storage\TestHeaderBlockWriting.cs" />
+    <Compile Include="POIFS\Storage\TestPropertyBlock.cs" />
+    <Compile Include="POIFS\Storage\TestRawDataBlock.cs" />
+    <Compile Include="POIFS\Storage\TestRawDataBlockList.cs" />
+    <Compile Include="POIFS\Storage\TestSmallBlockTableReader.cs" />
+    <Compile Include="POIFS\Storage\TestSmallBlockTableWriter.cs" />
+    <Compile Include="POIFS\Storage\TestSmallDocumentBlock.cs" />
+    <Compile Include="POIFS\Storage\TestSmallDocumentBlockList.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\DummyPOILogger.cs" />
+    <Compile Include="Utility\TestArrayUtil.cs" />
+    <Compile Include="Utility\TestBitField.cs" />
+    <Compile Include="Utility\TestByteField.cs" />
+    <Compile Include="Utility\TestClassID.cs" />
+    <Compile Include="Utility\TestHexDump.cs" />
+    <Compile Include="Utility\TestIntegerField.cs" />
+    <Compile Include="Utility\TestIntList.cs" />
+    <Compile Include="Utility\TestLittleEndian.cs" />
+    <Compile Include="Utility\TestLittleEndianStreams.cs" />
+    <Compile Include="Utility\TestLongField.cs" />
+    <Compile Include="Utility\TestPOILogFactory.cs" />
+    <Compile Include="Utility\TestPOILogger.cs" />
+    <Compile Include="Utility\TestShortField.cs" />
+    <Compile Include="Utility\TestShortList.cs" />
+    <Compile Include="Utility\TestStringUtil.cs" />
+    <Compile Include="Utility\TestULongField.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NStorage\NStorage.csproj">
+      <Project>{a35e2ae0-2933-440f-89b7-e98ec503d361}</Project>
+      <Name>NStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="POIFS\Data\source-files\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
